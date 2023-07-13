@@ -100,12 +100,16 @@ nav {
 }
 
 .info {
-    column-count: 2;
-    column-gap: 40px;
     background-color: #efeeee;
     border-radius: 5px;
     padding: 1rem 1rem;
 
+}
+.info img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
 }
 
 article>p {
@@ -114,7 +118,19 @@ article>p {
     font-family: 'Pridi', sans-serif;
 
 }
+.info-deep p{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Pridi', sans-serif;
+}
+.info-deep b{
+    font-family: 'Pridi', sans-serif;
+    font-size:18px;
+    text-transform: uppercase;
 
+}
 article p:first-child::first-line {
     font-weight: 700;
     font-size: 22px;
@@ -158,6 +174,8 @@ article p:first-child::first-line {
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
+    font-family: 'Pridi', sans-serif;
+
 }
 /* footer */
 
