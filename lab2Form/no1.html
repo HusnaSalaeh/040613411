@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <style>
+    .form-group {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <h1>ควรใช้ input type แบบใด?</h1>
+    <form action="">
+      <div class="form-group">
+        <label>ชื่อเต็ม/ย่อของสาขาวิชา</label>
+        <input type="text" name="dept" />
+      </div>
+      <div class="form-group">
+        <label>จำนวนเงินที่จะโอน</label>
+        <input type="number" name="amount" />
+      </div>
+      <div class="form-group">
+        <label>อาหารที่ชื่นชอบ 5 ชนิดจากมากไปน้อย</label>
+      </div>
+        <textarea name="food"  cols="30" rows="5"></textarea>
+        <div class="form-group">
+          <label>ค่าไฟฟ้า 3 เดือนที่ผ่านมา</label>
+          <input type="number" name="electric" />
+        </div>
+        <div class="form-group">
+          <label>รหัสบัตรประชาชน</label>
+          <input type="text" name="cardNo" />
+        </div>
+        <div class="form-group">
+          <label>ความพึงพอใจของหนังสือเล่มนี้</label>
+          <input type="radio" name="book" />5
+          <input type="radio" name="book" />4
+          <input type="radio" name="book" />3
+          <input type="radio" name="book" />2
+          <input type="radio" name="book" />1
+        </div>
+        <div class="form-group">
+          <label>อาการป่วย</label>
+        </div>
+        <textarea name="food"  cols="30" rows="5"></textarea>
+        <div class="form-group">
+          <label>ในช่วง 3 เดือนที่ผ่านมา เคยได้รับวัคซีนหรือไม่</label>
+          <input type="radio" name="vacine" />เคย
+          <input type="radio" name="vacine" />ไม่เคย
+        </div>
+        <div class="form-group">
+          <label>รหัสผ่าน</label>
+          <input type="password" name="password" />
+        </div>
+        <div class="form-group">
+          <label for="startTime">เวลาเข้าเรียน:</label>
+          <input type="time" id="startTime" name="startTime" required>
+          <label for="endTime">เวลาสิ้นสุดการเรียน:</label>
+          <input type="time" id="endTime" name="endTime" required>
+        </div>
+        <div class="form-group">
+          <label>วันเวลาที่ต้องไปพบแพทย์</label>
+          <input type="datetime-local"  name="appointmentDateTime" required>
+        </div>
+    </form>
+  </body>
+</html>

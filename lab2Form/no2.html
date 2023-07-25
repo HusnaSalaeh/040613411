@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+  </head>
+  <body>
+    <h3>แบบฟอร์มจองทัวร์</h3>
+    <form action="">
+      <fieldset>
+        <legend>ข้อมูลทั่วไป</legend>
+        <div class="form-group row">
+          <label for="">ชื่อ-สกุล:</label>
+        </div>
+        <input type="text" name="name" placeholder="กรอกชื่อ-สกุล" required />
+        <div class="form-group row">
+          <label for="">Email:</label>
+        </div>
+        <input type="email" name="email" required />
+        <div class="form-group row">
+          <label for="">โทรศัพท์:</label>
+        </div>
+        <input type="tel" name="phone" value="+66" required />
+        <div class="form-group row">
+          <label for="">ที่อยู่:</label>
+        </div>
+        <textarea name="address" rows="2" cols="30"></textarea>
+        <div class="form-group row">
+          <label for="">รหัสไปรษณีย์:</label>
+          <input type="text" name="passcode" size="5" maxlength="5" />
+        </div>
+
+        <div class="form-group row">
+          <label for="">รูปผู้จอง :</label>
+          <input type="file" name="upload" />
+        </div>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>ข้อมูลเข้าสู่ระบบ</legend>
+        <div class="form-group row">
+          <label for="">Username:</label>
+        </div>
+
+        <input type="text" name="username" minlength="8" />
+        <div class="form-group row">
+          <label for="">Password:</label>
+        </div>
+
+        <input type="password" name="password" minlength="8" />
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+        <div class="form-group row">
+          <label for="" class="col-sm-2 col-form-label">แพคเก็จทัวร์ : </label>
+          <select
+            class="form-control select2"
+            name="ref_l_id"
+            id="ref_l_id"
+            required
+          >
+            <option value="">--select--</option>
+            <option value="1">ญี่ปุ่น</option>
+            <option value="2">เกาหลี</option>
+            <option value="3">สิงคโปร์</option>
+            <option value="4">อินโดนีเซีย</option>
+            <option value="5">มาเลเซีย</option>
+          </select>
+        </div>
+        <div class="form-group row">
+          <label for="">วันที่เดินทาง:</label>
+          <input type="date" name="date" />
+        </div>
+        <div class="form-group row">
+        <label for="">จำนวนผู้เดินทาง:</label>
+          <input type="number"  name="number" size="7" min="1" max="10" required>
+        </div>
+        <div class="form-group row">
+            <label for="">เน้นการท่องเที่ยวแบบใด?</label>
+            </div>
+            <label><input type="checkbox" name="option1" value="1">ชอปปิ้ง</label><br>
+            <label><input type="checkbox" name="option1" value="2">ธรรมชาติ</label><br>
+            <label><input type="checkbox" name="option1" value="3">ทะเล</label><br>
+      </fieldset>
+      <div class="form-group row">
+        <label for="">ยอมรับเงื่อนไขและข้อตกลง</label>
+        <input type="radio" checked>I agree
+        <input type="radio">I disagree
+        <button>จอง</button>
+        </div>
+    </form>
+  </body>
+</html>
