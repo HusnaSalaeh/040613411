@@ -1,0 +1,13 @@
+.yellow-bg {
+      background-color: #ffff00; /* สีเหลืองทำเป็นพื้นหลังข้อความ */
+      text-decoration: underline;
+}
+.gray-bg {
+    background-color: grey; /* สีเหลืองทำเป็นพื้นหลังข้อความ */
+
+}
+#year {
+    font-style: italic; /* ตัวเอียง */
+    font-weight: bold; /* ตัวหนา */
+    color: red; /* สีแดง */
+}
