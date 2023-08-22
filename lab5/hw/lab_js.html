@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic JavaScript</title>
+    <script>
+        let students = [
+            {
+                fullname: 'นายตั้งใจ เรียนมาก',
+                age: 18,
+                year: 1,
+                gpa: 3.40,
+                help: true
+            },
+            {
+                fullname: 'นายส่งงาน ตลอดมา',
+                age: 19,
+                year: 2,
+                gpa: 3.00,
+                help: false
+            },
+            {
+                fullname: 'นางสาวใส่ใจ ดีงาม',
+                age: 20,
+                year: 3,
+                gpa: 2.90,
+                help: true
+            },
+            {
+                fullname: 'นางสาวน้ำใจ ใสสะอาด',
+                age: 21,
+                year: 4,
+                gpa: 3.50,
+                help: true
+            },
+            {
+                fullname: 'นายขี้คร้าน ตัวเป็นขน',
+                age: 19,
+                year: 2,
+                gpa: 3.10,
+                help: true
+            },
+            {
+                fullname: 'นายเจ้าชู้ ได้พ่อ',
+                age: 18,
+                year: 1,
+                gpa: 2.80,
+                help: false
+            },
+            {
+                fullname: 'นางสาวขยัน ไม่ทำบุญ',
+                age: 18,
+                year: 1,
+                gpa: 4.00,
+                help: false
+            }
+        ];
+
+        function checkScholarship(student) {
+            if (student.gpa >= 3.20) {
+                if (student.year === 1 || (student.year >= 2 && student.help===true && student.gpa >= 2.75)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function displayScholarshipInfo() {
+            let output = '';
+            for (let i = 0; i < students.length; i++) {
+                const student = students[i];
+                const scholarshipReceived = checkScholarship(student);
+                const yearText = `ชั้นปีที่ ${student.year}`;
+
+                output += yearText + '\n';
+                if (scholarshipReceived) {
+                    output += student.fullname +' เกิดเมื่อปี '+ (2566 - student.age) + ' ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์';
+                    if (student.year >= 1 && student.help && student.gpa >= 2.75) {
+                        output += 'และยังช่วยงานภาควิชาด้วย';
+                    }
+                } else {
+                    output += student.fullname + ' เกิดเมื่อปี '+ (2566 - student.age) + ' ไม่ได้ทุนการศึกษา เนื่องจาก';
+                    if (student.gpa < 3.20) {
+                        output += 'เกรดเฉลี่ยไม่ถึงเกณฑ์';
+                    } else if (student.year >= 2 && student.help && student.gpa < 2.75) {
+                        output += 'ไม่ยังช่วยงานภาควิชา';
+                    }
+                }
+                output += '\n\n';
+            }
+            console.log(output);
+        }
+    </script>
+</head>
+<body>
+    <h1>Scholarship Information</h1>
+    <script>
+        displayScholarshipInfo();
+    </script>
+</body>
+</html>
