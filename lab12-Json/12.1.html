@@ -10,13 +10,12 @@
           let result = document.getElementById("result"); // ดึง <ol> เพื่อใช้ในการเพิ่ม <li>
 
           for (let i = 0; i < jsonData.features.length; i++) {
-            if(jsonData.features[i].properties.num_bed < 100){
+           
             let properties = jsonData.features[i].properties;
             let content = "ชื่อโรงพยาบาล: " + properties.name + "(" + properties.num_bed + " เตียง"+ ")";
             let li = document.createElement("li"); // สร้างแท็ก <li>
             li.textContent = content; // นำข้อมูลที่ได้มาแสดงใน <li>
             result.appendChild(li); // เพิ่ม <li> ใหม่เข้าใน <ol>
-            }
           }
         } catch (error) {
           console.error("เกิดข้อผิดพลาดในการดึงข้อมูล: " + error);
