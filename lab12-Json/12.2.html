@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <script>
+      async function getDataFromAPI() {
+        try {
+          let response = await fetch("https://data.go.th/dataset/296f32c6-8c7e-4a54-ade0-0913d35d3168/resource/d132638d-a243-4829-aed8-10ed4fad917f/download/priv_hos.json");
+          let jsonData = await response.json(); // อ่านข้อมูล JSON
+          let result = document.getElementById("result"); // ดึง <ol> เพื่อใช้ในการเพิ่ม <li>
+
+          for (let i = 0; i < jsonData.features.length; i++) {
+            let properties = jsonData.features[i].properties;
+            let content = "ชื่อโรงพยาบาล: " + properties.name + "(" + properties.num_bed + " เตียง"+ ")";
+            let li = document.createElement("li"); // สร้างแท็ก <li>
+            li.textContent = content; // นำข้อมูลที่ได้มาแสดงใน <li>
+            result.appendChild(li); // เพิ่ม <li> ใหม่เข้าใน <ol>
+          }
+        } catch (error) {
+          console.error("เกิดข้อผิดพลาดในการดึงข้อมูล: " + error);
+        }
+      }
+
+      getDataFromAPI(); // เรียกฟังก์ชัน
+    </script>
+  </head>
+
+  <body>
+    <h1>โรงพยาบาลเอกชน ในกทม.</h1>
+    <ol id="result"></ol>
+  </body>
+</html>
